@@ -1,0 +1,14 @@
+.main_content
+	#recipe_top.row
+		.col-md-4
+			= image_tag @recipe.image.url(:medium), class: "recipe_image"
+		.col-md-8
+			#recipe_info
+				%h1= @recipe.title
+				%p.description= @recipe.description
+
+
+
+= link_to "back", root_path, class: "btn btn-default"
+= link_to "edit", edit_recipe_path, class: "btn btn-default"
+= link_to "delete", recipe_path , method: :delete, data: {confirm: "Are You Sure?"}, class: "btn btn-default"
